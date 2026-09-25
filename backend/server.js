@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   res.json({ message: 'Todo App API is running 🚀' });
 });
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/todoapp';
+const MONGO_URI = process.env.MONGO_URI || process.env.MONGO_URL || 'mongodb://localhost:27017/todoapp';
 
 mongoose
   .connect(MONGO_URI)
